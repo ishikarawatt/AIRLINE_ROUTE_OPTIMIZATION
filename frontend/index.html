@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airline Shortest Path Finder</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">✈ Airline Path Finder</div>
+    <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="find.html">Find Flight</a></li>
+        <li><a href="#features">Features</a></li>
+    </ul>
+</nav>
+
+<header class="hero" id="hero">
+    <div class="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Animated Clouds -->
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    
+    <div class="overlay">
+        <div class="hero-badge">
+            <span class="badge-icon">✈️</span>
+            <span>Powered by Advanced DSA Algorithms</span>
+        </div>
+        <h1 class="hero-title">
+            <span class="title-line">Find Your</span>
+            <span class="title-line highlight">Perfect Flight</span>
+        </h1>
+        <p class="hero-subtitle">Experience lightning-fast route optimization with Dijkstra & Bellman-Ford algorithms. Smart paths, real-time visualization, stunning design.</p>
+        <div class="hero-buttons">
+            <a href="find.html" class="btn-hero btn-primary">
+                <span>Get Started</span>
+                <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <a href="#features" class="btn-hero btn-secondary">
+                <span>Explore Features</span>
+            </a>
+        </div>
+        
+        <!-- Stats Section -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Airports</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">23+</div>
+                <div class="stat-label">Routes</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Algorithms</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="features" id="features">
+    <div class="features-header">
+        <h2 class="section-title">What's Inside?</h2>
+        <p class="section-subtitle">Discover powerful features that make flight optimization effortless</p>
+    </div>
+
+    <div class="feature-container">
+        
+        <div class="feature-card">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+            </div>
+            <h3>Smart Algorithms</h3>
+            <p>Shortest distance or lowest cost route using classical graph algorithms.</p>
+            <div class="feature-tags">
+                <span class="tag">Dijkstra</span>
+                <span class="tag">Bellman-Ford</span>
+            </div>
+        </div>
+
+        <div class="feature-card featured">
+            <div class="featured-badge">Most Popular</div>
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.5-8.25H12M9 15h3.75m.75 0h3.375m-4.125 0V11.25m0 3.75v3.375m0 0h3.375M9 11.25h3.75m4.5 0v.75m0 0h-.75m.75 0v.75m0 0h.75m-.75 0h.75m-4.5 0v.75m0 0h.75m-.75 0v.75m0 0h.75m0 0H12m2.625 0v.75m0 0h.75m-.75 0v.75m0 0h.75m2.625 0v.75m0 0h.75m-.75 0v.75m0 0h.75M9 6.75h3.75m4.5 0h.75m-.75 0v.75m0 0h.75m0 0v.75m0 0H15m2.625 0v.75m0 0h.75m-.75 0v.75m0 0h.75M9 3.75h3.75m4.5 0h.75m-.75 0v.75m0 0h.75m0 0v.75m0 0H15m2.625 0v.75m0 0h.75m-.75 0v.75m0 0h.75" />
+                </svg>
+            </div>
+            <h3>Animated Map</h3>
+            <p>Watch your selected plane fly across the map in real-time.</p>
+            <div class="feature-tags">
+                <span class="tag">Leaflet</span>
+                <span class="tag">Real-time</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3v.75M10.5 6v.75m0 3v.75m0 3v.75m0 3v.75M6.75 6v.75m0 3v.75m0 3v.75m0 3v.75m3.75-15H5.25c-1.518 0-2.75 1.232-2.75 2.75v13.5c0 1.518 1.232 2.75 2.75 2.75h13.5c1.518 0 2.75-1.232 2.75-2.75V8.25c0-1.518-1.232-2.75-2.75-2.75h-5.25a.75.75 0 0 1-.75-.75V1.5a.75.75 0 0 0-.75-.75H10.5a.75.75 0 0 0-.75.75v5.25a.75.75 0 0 1-.75.75Z" />
+                </svg>
+            </div>
+            <h3>Flight Summary</h3>
+            <p>Get a detailed flight summary with all essential information.</p>
+            <div class="feature-tags">
+                <span class="tag">Download</span>
+                <span class="tag">Export</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- How It Works Section -->
+    <div class="how-it-works">
+        <h3 class="how-title">How It Works</h3>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Choose Route</h4>
+                    <p>Select origin and destination airports</p>
+                </div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Select Algorithm</h4>
+                    <p>Pick Dijkstra or Bellman-Ford</p>
+                </div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Get Results</h4>
+                    <p>View optimized path on map</p>
+                </div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Download Ticket</h4>
+                    <p>Save your flight summary</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Airline Shortest Path Finder — Made by Ishu 💙</p>
+</footer>
+
+<script src="js/main.js" defer></script>
+
+</body>
+</html>

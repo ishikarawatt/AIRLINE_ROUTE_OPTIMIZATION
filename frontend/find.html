@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Find Flight - Airline Path Finder</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ======================= NAVBAR ======================= -->
+  <nav class="navbar">
+    <div class="logo">✈️ Airline Path Finder</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="find.html" class="active">Find Flight</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======================= HERO ======================= -->
+  <header class="hero hero-small">
+    <div class="overlay">
+      <h1>Find Your Flight</h1>
+      <p>Select origin, destination, and your optimization preference.</p>
+    </div>
+    <div class="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+  </header>
+
+  <!-- ======================= FORM SECTION ======================= -->
+  <section class="form-section" id="form-section">
+    <div class="form-container">
+      <h2 class="form-title">Flight Search</h2>
+      <form id="searchForm">
+
+        <!-- ROW 1: DSA SELECTION -->
+        <div class="form-group-title">1. Select Optimization</div>
+        <div class="input-group">
+          <!-- MINIMIZE BY (WEIGHT TYPE) -->
+          <div class="input-field-half">
+            <label for="weightType">Minimize By</label>
+            <div class="select-wrapper">
+              <select id="weightType">
+                <option value="distance">Distance (km)</option>
+                <option value="cost">Cost (₹)</option>
+              </select>
+            </div>
+            <p class="field-info">Choose what to find the shortest path for.</p>
+          </div>
+          <!-- ALGORITHM CHOICE -->
+          <div class="input-field-half">
+            <label for="algorithm">Algorithm</label>
+            <div class="select-wrapper">
+              <select id="algorithm">
+                <option value="dijkstra">Dijkstra (Fast, No Negative Weights)</option>
+                <option value="bellman">Bellman-Ford (Slower, Handles Negatives)</option>
+              </select>
+            </div>
+            <p class="field-info">Bellman-Ford is needed for graphs with negative cost.</p>
+          </div>
+        </div>
+
+        <!-- ROW 2: FLIGHT DETAILS -->
+        <div class="form-group-title">2. Select Flight Details</div>
+        <div class="input-group">
+          <div class="input-field-half">
+            <label for="fromCity">Origin (From)</label>
+            <div class="select-wrapper">
+              <select id="fromCity"></select>
+            </div>
+          </div>
+          <div class="input-field-half">
+            <label for="toCity">Destination (To)</label>
+            <div class="select-wrapper">
+              <select id="toCity"></select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 3: CLASS & DATE -->
+        <div class="input-group">
+          <div class="input-field-half">
+            <label for="classSelect">Ticket Class</label>
+            <div class="select-wrapper">
+              <select id="classSelect">
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First Class</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-field-half">
+            <label for="dateSelect">Departure Date</label>
+            <!-- The 'min' attribute will be set by find.js -->
+            <input id="dateSelect" type="date" min="" required />
+          </div>
+        </div>
+        
+        <!-- ROW 4: DYNAMIC PRICE & SUBMIT BUTTON -->
+        <div class="input-group" style="align-items: flex-end;">
+            <div class="input-field-half">
+                <label>Estimated Price (Direct Flight)</label>
+                <!-- This is now a text span, not an input -->
+                <div class="price-display-wrapper">
+                    <span id="ticketCostDisplay" class="price-display">₹ --</span>
+                    <!-- Hidden input to pass the calculated cost -->
+                    <input type="hidden" id="ticketCostHidden" /> 
+                </div>
+            </div>
+            <div class="input-field-half">
+                 <button id="findBtn" class="btn-find">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path d="M10.89 2.162a.75.75 0 01.92 1.058l-2.071 4.309 4.309-2.071a.75.75 0 011.058.92L11.05 10.5l4.056 4.056a.75.75 0 01-.92 1.058l-4.309-2.071 2.071 4.309a.75.75 0 01-1.058.92L10.5 11.05l-4.056 4.056a.75.75 0 01-1.058-.92l2.071-4.309-4.309 2.071a.75.75 0 01-.92-1.058L8.95 10.5 4.894 6.444a.75.75 0 01.92-1.058l4.309 2.071-2.071-4.309a.75.75 0 011.058-.92L10.5 8.95l4.056-4.056z" />
+                    </svg>
+                    Find Shortest Path
+                </button>
+            </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Airline Shortest Path Finder — Made by Ishu</p>
+      <p>Demonstrating Dijkstra vs. Bellman-Ford for DSA PBL</p>
+    </div>
+  </footer>
+
+  <script src="js/find.js"></script>
+</body>
+</html>

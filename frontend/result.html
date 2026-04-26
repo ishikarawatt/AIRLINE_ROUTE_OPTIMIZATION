@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Result - Airline Path Finder</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body class="result-page-body">
+  <nav class="navbar">
+    <div class="logo">✈️ Airline Path Finder</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="find.html">Find Flight</a></li>
+    </ul>
+
+    <div class="theme-toggle">
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </nav>
+
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loader-card">
+      <div class="takeoff-plane"></div>
+      <p>Searching for best route…</p>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <div id="map"></div>
+
+    <div class="flight-summary-card" id="summaryCard">
+      <h2>Flight Summary</h2>
+
+      <div id="ticket" class="flight-ticket">
+        <div class="ticket-top">
+          <div class="airline" >✈️ AIR-LITE</div>
+          <div class="ticket-badge" id="ticketBadge">STANDARD</div>
+        </div>
+        <div class="ticket-mid">
+          <div class="from-to">
+            <div class="from"><span id="fromName">—</span><small id="fromCode">—</small></div>
+            <div class="arrow">→</div>
+            <div class="to"><span id="toName">—</span><small id="toCode">—</small></div>
+          </div>
+          <div class="meta">
+            <div>Duration: <strong id="duration">—</strong></div>
+            <div>Stops: <strong id="stops">—</strong></div>
+          </div>
+        </div>
+        <div class="ticket-bottom">
+          <div class="left">
+            <div>Date: <strong id="date">—</strong></div>
+            <div>Class: <strong id="class">—</strong></div>
+          </div>
+          <div class="right">
+            <div class="cost" id="cost">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flight-progress" aria-hidden="true">
+        <div class="bar"></div>
+      </div>
+
+      <div class="tech-summary">
+          <h3 class="tech-title">Route Details</h3>
+          <div class="tech-row">
+              <span>Algorithm:</span>
+              <strong id="tech-algo">--</strong>
+          </div>
+          <div class="tech-row">
+              <span>Minimizing:</span>
+              <strong id="tech-min-type">--</strong>
+          </div>
+          <div class="tech-row">
+              <span>Departure:</span>
+              <strong id="tech-departure">08:00</strong>
+          </div>
+          <div class="tech-row">
+              <span>Est. Arrival:</span>
+              <strong id="tech-arrival">--</strong>
+          </div>
+      </div>
+    </div>
+
+
+<!-- DOWNLOAD BUTTON -->
+<button id="downloadTicket" class="download-btn">
+    Download Ticket
+</button>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Airline Shortest Path Finder — Made by Ishu</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/result.js"></script>
+</body>
+</html>

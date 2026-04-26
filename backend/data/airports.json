@@ -1,0 +1,17 @@
+[
+  { "id": 1, "name": "Indira Gandhi International (Delhi)", "lat": 28.556162, "lng": 77.100281 },
+  { "id": 2, "name": "Chhatrapati Shivaji Maharaj (Mumbai)", "lat": 19.089559, "lng": 72.865614 },
+  { "id": 3, "name": "Kempegowda (Bengaluru)", "lat": 13.198633, "lng": 77.706623 },
+  { "id": 4, "name": "Rajiv Gandhi (Hyderabad)", "lat": 17.240263, "lng": 78.429529 },
+  { "id": 5, "name": "Chennai International (Chennai)", "lat": 12.994055, "lng": 80.170869 },
+  { "id": 6, "name": "Netaji Subhas Chandra Bose (Kolkata)", "lat": 22.654737, "lng": 88.446671 },
+  { "id": 7, "name": "Sardar Vallabhbhai Patel (Ahmedabad)", "lat": 23.073460, "lng": 72.626617 },
+  { "id": 8, "name": "Cochin International (Kochi)", "lat": 10.152028, "lng": 76.401884 },
+  { "id": 9, "name": "Pune Airport (Pune)", "lat": 18.580000, "lng": 73.920000 },
+  { "id": 10, "name": "Jaipur International (Jaipur)", "lat": 26.824217, "lng": 75.812222 },
+  { "id": 11, "name": "Goa Dabolim (Goa)", "lat": 15.380000, "lng": 73.830000 },
+  { "id": 12, "name": "Biju Patnaik (Bhubaneswar)", "lat": 20.244444, "lng": 85.817778 },
+  { "id": 13, "name": "Sri Guru Ram Dass Jee (Amritsar)", "lat": 31.706974, "lng": 74.797333 },
+  { "id": 14, "name": "Lokpriya Gopinath Bordoloi (Guwahati)", "lat": 26.106067, "lng": 91.585889 },
+  { "id": 15, "name": "Dehradun (Jolly Grant)", "lat": 30.189722, "lng": 78.180278 }
+]
