@@ -16,7 +16,7 @@ app.get('/airports', (req, res) => {
     res.send(raw);
   } catch (e) {
     console.error(e);
-    res.status(500).json({ error: 'Could not read airports data' });
+    res.status(500).json({ error: 'Could not read airports data ' });
   }
 });
 
