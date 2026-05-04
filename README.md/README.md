@@ -1,59 +1,142 @@
-# Airline Shortest Path Finder
+# ✈️ Airline Shortest Path Finder
 
-A modern, beautifully designed web application for finding optimal flight routes using Dijkstra's and Bellman-Ford algorithms.
+> A sleek, full-stack web app for finding optimal flight routes across 15 major Indian airports — powered by Dijkstra's and Bellman-Ford algorithms, with an interactive map and downloadable tickets.
 
-## ✨ Features
+---
 
-- 🎨 **Modern Dark UI** with glassmorphism effects and smooth animations
-- 🗺️ **Interactive Map** with animated flight paths using Leaflet
-- 🎫 **Downloadable Tickets** - Save your flight summary as an image
-- 🌓 **Theme Toggle** - Switch between dark and light modes
-- 📊 **Two Algorithms** - Dijkstra (fast) and Bellman-Ford (handles negative weights)
-- 💰 **Cost Optimization** - Find cheapest routes with subsidy support
-- 📱 **Responsive Design** - Works on all screen sizes
+## 🌟 Features
 
-## Setup
+| Feature | Description |
+|---|---|
+| 🗺️ Interactive Map | Animated flight paths rendered with Leaflet.js |
+| 🧠 Dual Algorithms | Dijkstra (fast) and Bellman-Ford (handles subsidies/negative weights) |
+| 💰 Cost & Distance Modes | Optimize routes by fare or by kilometers |
+| 🎫 Downloadable Ticket | Export your flight summary as a PNG image |
+| 🌓 Theme Toggle | Switch between dark and light mode |
+| 🎨 Glassmorphism UI | Modern dark interface with smooth animations |
+| 📱 Responsive | Works seamlessly across all screen sizes |
 
-### Backend
-1. Open terminal and go to `backend` folder.
-2. Run:
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** v14+ and `npm`
+- A static file server (VS Code Live Server, or `npx serve`)
+
+---
+
+### 1 — Start the Backend
+
 ```bash
+cd backend
 npm install
 npm start
 ```
-Backend will run at `http://localhost:5000`
 
-### Frontend
-1. Serve `frontend` folder using Live Server (VS Code) or a static server:
+The API will be available at `http://localhost:5000`
+
+---
+
+### 2 — Serve the Frontend
+
+**Option A — `npx serve`**
 ```bash
 cd frontend
 npx serve
 ```
-or use VS Code Live Server. Open the URL shown (e.g., `http://127.0.0.1:5000` for serve or `http://127.0.0.1:5500` for Live Server).
+Then open the URL shown in your terminal (e.g. `http://localhost:3000`).
 
-2. Go to `index.html` → click **Get Started** → Fill `find.html` → click **Find Shortest Path**.
+**Option B — VS Code Live Server**
+Right-click `index.html` → **Open with Live Server**  
+(default: `http://127.0.0.1:5500`)
 
-## How It Works
+---
 
-1. **Select Optimization Type**: Choose to minimize by distance or cost
-2. **Choose Algorithm**: 
-   - Dijkstra: Faster, but doesn't work with negative weights
-   - Bellman-Ford: Slower, but handles negative costs (subsidies)
-3. **Pick Route**: Select origin and destination airports
-4. **View Results**: See your optimized route on an interactive map
-5. **Download Ticket**: Save your flight summary as a PNG image
+### 3 — Use the App
 
-## Technical Details
+1. Open `index.html` and click **Get Started**
+2. On `find.html`, select your optimization type, algorithm, origin, and destination
+3. Click **Find Shortest Path** to view your route on the map
+4. Click **Download Ticket** to save your flight summary as a PNG
 
-- **Backend**: Node.js + Express serves airport and route data
-- **Frontend**: Vanilla HTML/CSS/JavaScript with Leaflet maps
-- **Algorithms**: Dijkstra and Bellman-Ford for shortest path calculation
-- **Data**: 15 major Indian airports with 23 routes
+---
 
-## Notes
-- Backend serves airports and edges JSON.
-- Frontend computes shortest path using selected algorithm and displays the route.
-- All distances are sample values for demo/visualization.
-- Some routes have negative costs to demonstrate Bellman-Ford algorithm capabilities.
+## 🧠 Algorithm Guide
 
-## Made by Ishu 💙
+### Dijkstra's Algorithm
+Explores the graph greedily using a min-priority queue. Guarantees the optimal path for non-negative weights. Best for standard distance or price optimization.
+
+- ⚡ **Fast** — O((V + E) log V)
+- ✅ Optimal for positive weights
+- ❌ Does not handle negative weights (subsidized routes)
+
+### Bellman-Ford Algorithm
+Relaxes all edges V−1 times, making it robust to negative edge weights. Slightly slower but essential for routes with government subsidies or discount models.
+
+- 🔄 **Reliable** — O(V × E)
+- ✅ Handles negative weights
+- ✅ Detects negative-weight cycles
+
+| | Dijkstra | Bellman-Ford |
+|---|---|---|
+| Speed | ⚡ Faster | 🐢 Slower |
+| Negative weights | ❌ | ✅ |
+| Use case | Standard routes | Subsidized fares |
+
+---
+
+## 🗂️ Project Structure
+
+```
+airline-shortest-path/
+│
+├── backend/
+│   ├── server.js             # Express server — serves airports & routes JSON
+│   ├── data/
+│   │   ├── airports.json     # 15 major Indian airports (code, name, coords)
+│   │   └── edges.json        # 23 routes with distance & cost weights
+│   └── package.json
+│
+└── frontend/
+    ├── index.html            # Landing page
+    ├── find.html             # Route finder UI
+    ├── css/
+    │   └── styles.css        # Dark theme, glassmorphism, animations
+    └── js/
+        ├── map.js            # Leaflet map + animated flight paths
+        ├── dijkstra.js       # Dijkstra's algorithm
+        ├── bellman-ford.js   # Bellman-Ford algorithm
+        └── ticket.js         # PNG ticket export
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | Node.js, Express |
+| Frontend | Vanilla HTML / CSS / JavaScript |
+| Maps | [Leaflet.js](https://leafletjs.com/) |
+| Ticket export | HTML Canvas / `html2canvas` |
+| Data | 15 Indian airports · 23 routes |
+
+---
+
+## 📌 Notes
+
+- All distances and costs are **sample values** for demonstration purposes.
+- Some routes carry **negative costs** intentionally, to showcase Bellman-Ford's subsidy handling.
+- The backend only serves static JSON data; all pathfinding runs client-side in the browser.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+*Made by ISHIKA RAWAT*
