@@ -19,6 +19,7 @@ app.get('/airports', (req, res) => {
     res.status(500).json({ error: 'Could not read airports data ' });
   }
 });
+
 app.get('/edges', (req, res) => {
   try {
     const raw = fs.readFileSync(path.join(DATA_DIR, 'edges.json'), 'utf8');
