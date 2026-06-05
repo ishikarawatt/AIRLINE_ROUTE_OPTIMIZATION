@@ -19,7 +19,7 @@ app.get('/airports', (req, res) => {
   }
 });
 
-app.get('/edges', (req, res) => {
+   app.get('/edges', (req, res) => {
   try {
     const raw = fs.readFileSync(path.join(DATA_DIR, 'edges.json'), 'utf8');
     res.setHeader('Content-Type', 'application/json');
