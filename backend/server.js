@@ -6,6 +6,7 @@ const path = require('path');
 const app = express();
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
+
 const DATA_DIR = path.join(__dirname, 'data');
 
 app.get('/airports', (req, res) => {
