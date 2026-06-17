@@ -8,7 +8,6 @@ app.use(express.json());
 
 const DATA_DIR = path.join(__dirname, 'data');
 
-
 app.get('/airports', (req, res) => {
   try {
     const raw = fs.readFileSync(path.join(DATA_DIR, 'airports.json'), 'utf8');
