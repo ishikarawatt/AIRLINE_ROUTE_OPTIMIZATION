@@ -13,8 +13,7 @@ app.get('/airports', (req, res) => {
     const raw = fs.readFileSync(path.join(DATA_DIR, 'airports.json'), 'utf8');
     res.setHeader('Content-Type', 'application/json');
     res.send(raw);
-  } 
-catch (e) {
+  } catch (e) {
     console.error(e);
     res.status(500).json({ error: 'Could not read airports data ' });
   }
